@@ -1,4 +1,7 @@
 # my_robot
 
 A differntial drive robot with camera and Hokuyo laser scanner
-![](default_gzclient_camera(1)-2020-12-20T04_15_16.236428.jpg)
+![](image/world.jpg)
+
+Plugins:
+using plugins from gazebo @ref :http://gazebosim.org/tutorials?tut=ros_gzplugins#Camera
