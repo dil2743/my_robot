@@ -3,18 +3,18 @@
 <launch>
 
   <!-- Robot pose -->
-  <arg name="x" default="0"/>
-  <arg name="y" default="0"/>
-  <arg name="z" default="0"/>
-  <arg name="roll" default="0"/>
-  <arg name="pitch" default="0"/>
-  <arg name="yaw" default="0"/>
+  <arg name="x" default="2.020519"/>
+  <arg name="y" default="-5.163353"/>
+  <arg name="z" default="0.100001"/>
+  <arg name="roll" default="-0.000010"/>
+  <arg name="pitch" default="0.000682"/>
+  <arg name="yaw" default="1.598852"/>
 
   <!-- Launch other relevant files-->
   <include file="$(find my_robot)/launch/robot_description.launch"/>
 
   <!-- World File this will include the world file from the relative path  -->
-  <arg name="world_file" default="$(find my_robot)/worlds/empty.world"/>
+  <arg name="world_file" default="$(find my_robot)/worlds/RoboRestaurant__.world"/>
 
   <!-- Launch Gazebo World from gazebo ros package launch empty_world-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
