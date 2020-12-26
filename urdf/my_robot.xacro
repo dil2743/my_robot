@@ -149,7 +149,7 @@
 
     <inertial>
       <mass value="0.1"/>
-      <origin xyz="0.05 0.05 0.05"/>
+      <origin xyz="0.06 0.06 0.05"/>
       <inertia
           ixx="1e-6" ixy="0" ixz="0"
           iyy="1e-6" iyz="0"
@@ -221,16 +221,18 @@
   </joint>
 
    <gazebo reference='left_wheel'>
-       <material>Gazebo/Green</material>
+       <material>Gazebo/White</material>
    </gazebo>
    <gazebo reference='right_wheel'>
-       <material>Gazebo/Green</material>
+       <material>Gazebo/White</material>
    </gazebo>
-   <gazebo reference='chassis'>
+   <gazebo reference="chassis">
        <material>Gazebo/Blue</material>
    </gazebo>
    <gazebo reference="camera">
        <material>Gazebo/Red</material>
    </gazebo>
-
+   <gazebo reference="hokuyo">
+       <material>Gazebo/Green</material>
+   </gazebo>
 </robot>
