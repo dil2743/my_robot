@@ -88,31 +88,44 @@
     <limit effort="0" lower="0" upper="0" velocity="0"/>
   </joint>
 
-  <link name="laser_scanner">
+
+  <link name="hokuyo">
+
+    <pose>0 0 0 0 0 0</pose>
+
     <inertial>
-      <mass value="1"/>
-      <origin rpy="0  0  0" xyz="0  0  0"/>
-      <inertia ixx="0.166667" ixy="0" ixz="0" iyy="0.166667" iyz="0" izz="0.166667"/>
+      <mass value="1e-6"/>
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
     </inertial>
-    <collision name="laser_scanner_collision">
-      <origin rpy="0    0.03  0" xyz="0  0  0"/>
+
+    <collision name='hokuyo_collision'> 
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>      
       <geometry>
-        <mesh filename="package://my_robot/meshes/hokuyo.dae" scale="1 1 1"/>
+        <box size="0.1 0.1 0.1"/>
       </geometry>
+      <mass value="1e-5"/>
     </collision>
-    <visual name="laser_scanner_visual">
-      <origin rpy="0    0.03  0" xyz="0  0  0"/>
+
+    <visual name='hokuyo_visual'> 
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>  
       <geometry>
-        <mesh filename="package://my_robot/meshes/hokuyo.dae" scale="1 1 1"/>
+        <mesh filename="package://my_robot/meshes/hokuyo.dae"/>
       </geometry>
+      <mass value="1e-5"/>
     </visual>
+  
   </link>
-  <joint name="robot_base_laser_scanner" type="fixed">
+
+  <joint type="fixed" name="hokuyo_joint">
+    <origin xyz="0.0 0 0.2" rpy="0 0 0"/>
+    <child link="hokuyo"/>
     <parent link="robot_base"/>
-    <child link="laser_scanner"/>
-    <origin rpy="-0.0001  -0.03725  0.01409" xyz="0  0 0.1500"/>
-    <axis xyz="0  0  0"/>
-    <limit effort="0" lower="0" upper="0" velocity="0"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
   </joint>
 
   <link name="robot_left_support">
@@ -347,7 +360,7 @@
     </visual>
   </link>
   <joint type="fixed" name="camera_joint">
-    <origin xyz="0.0 0.285 0.095" rpy="0 0 1.5707"/>
+    <origin xyz="0.0 0.285 0.090" rpy="0 0 1.5707"/>
     <child link="camera"/>
     <parent link="robot_base"/>
     <axis xyz="1 0 0" rpy="0 0 0"/>
