@@ -16,7 +16,7 @@
 
   <link name="robot_base">
     <inertial>
-      <mass value="1"/>
+      <mass value="5"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
     </inertial>
@@ -36,7 +36,7 @@
 
   <link name="robot_middle_plate">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.5"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
     </inertial>
@@ -63,7 +63,7 @@
   
   <link name="robot_top_plate">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.3"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
     </inertial>
@@ -130,7 +130,7 @@
 
   <link name="robot_left_support">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
     </inertial>
@@ -157,7 +157,7 @@
 
   <link name="robot_back_support">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
     </inertial>
@@ -184,7 +184,7 @@
   
   <link name="robot_right_support">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.145833" ixy="0" ixz="0" iyy="0.145833" iyz="0" izz="0.125"/>
     </inertial>
@@ -211,20 +211,20 @@
 
   <link name="front_caster">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
     </inertial>
     <collision name="front_caster_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <sphere radius="0.055"/>
+        <sphere radius="0.0605"/>
       </geometry>
     </collision>
     <visual name="front_caster_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <sphere radius="0.055"/>
+        <sphere radius="0.0605"/>
       </geometry>
     </visual>
   </link>
@@ -238,20 +238,20 @@
 
   <link name="back_caster">
     <inertial>
-      <mass value="1"/>
+      <mass value="0.1"/>
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1"/>
     </inertial>
     <collision name="back_caster_collision">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <sphere radius="0.055"/>
+        <sphere radius="0.0605"/>
       </geometry>
     </collision>
     <visual name="back_caster_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <sphere radius="0.055"/>
+        <sphere radius="0.0605"/>
       </geometry>
     </visual>
   </link>
@@ -267,7 +267,7 @@
     <pose>0 0 0.1 0 0 0</pose>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="1"/>
       <origin xyz="0.0 0 0" rpy="0 -1.5707  0"/>
       <inertia
           ixx="0.1" ixy="0" ixz="0"
@@ -302,7 +302,7 @@
     <pose>0 0 0.1 0 0 0</pose>
 
     <inertial>
-      <mass value="5.0"/>
+      <mass value="1.0"/>
       <origin xyz="0.0 0 0" rpy="0 1.5707  0"/>
       <inertia
           ixx="0.1" ixy="0" ixz="0"
@@ -360,7 +360,7 @@
     </visual>
   </link>
   <joint type="fixed" name="camera_joint">
-    <origin xyz="0.0 0.285 0.090" rpy="0 0 1.5707"/>
+    <origin xyz="0.0 0.285 0.060" rpy="0 0 1.5707"/>
     <child link="camera"/>
     <parent link="robot_base"/>
     <axis xyz="1 0 0" rpy="0 0 0"/>
