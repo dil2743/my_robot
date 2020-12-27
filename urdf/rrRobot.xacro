@@ -1,11 +1,12 @@
 <?xml version="1.0" ?>
-<robot name="my_robot">
+
+<robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 <!-- The root link robot_base has an inertia specified in the URDF,
  but KDL does not support a root link with an inertia.  As a workaround,
   adding an extra dummy link to URDF-->
   <link name="Dummy_link"></link>
 
-  <urdf:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
+    <xacro:include filename="$(find my_robot)/urdf/my_robot.gazebo" />
 
   <joint name="Dummy_link_robot_base" type="fixed">
     <origin xyz="0 0 0" rpy="0 0 0" />
@@ -331,14 +332,14 @@
       />
     </inertial>
     <collision name='camera_collision'>
-      <origin xyz="0 0 0" rpy="0 0  0"/> 
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
       <mass value="0.1"/>
     </collision>
     <visual name='camera_visual'>
-      <origin xyz="0 0 0" rpy="0 0  0"/> 
+      <origin xyz="0 0 0" rpy="0 0 0"/> 
       <geometry>
         <box size="0.05 0.05 0.05"/>
       </geometry>
@@ -346,10 +347,10 @@
     </visual>
   </link>
   <joint type="fixed" name="camera_joint">
-    <origin xyz="0.0 0.28 0.095" rpy="0 0 0"/>
+    <origin xyz="0.0 0.285 0.095" rpy="0 0 1.5707"/>
     <child link="camera"/>
     <parent link="robot_base"/>
-    <axis xyz="0 1 0" rpy="0 0 0"/>
+    <axis xyz="1 0 0" rpy="0 0 0"/>
   </joint>
 
    <gazebo reference='left_wheel'>

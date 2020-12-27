@@ -14,7 +14,6 @@
   <include file="$(find my_robot)/launch/robot_description.launch"/>
 
   <!-- World File this will include the world file from the relative path  -->
-  <!--arg name="world_file" default="$(find my_robot)/worlds/RoboRestaurant__.world"/-->
   <arg name="world_file" default="$(find my_robot)/worlds/empty.world"/>
 
   <!-- Launch Gazebo World from gazebo ros package launch empty_world-->
@@ -26,9 +25,9 @@
     <arg name="world_name" value="$(arg world_file)"/>
   </include>
   
- <param name="robot_description" command="cat '$(find my_robot)/urdf/rrRobot.urdf'" />
-    
-    
+<!-- add below lines so that the xacro file can be converted into a URDF file -->
+  <!-- Find my robot Description-->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find my_robot)/urdf/rrRobot.xacro'" />
 
   <!-- Spawn My Robot The gazebo_ros package spawns the model from the URDF that robot_description helps generate. -->
   
@@ -40,4 +39,3 @@
 <node name="rviz" pkg="rviz" type="rviz" respawn="false"/>
 
 </launch>
-
